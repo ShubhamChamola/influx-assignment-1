@@ -1,0 +1,12 @@
+@use "./assets/styles/reset";
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+}
