@@ -6,9 +6,7 @@ export default function Stepper({ steps }) {
           <span className="counter text-white text-opacity-75 fw-light fs-7 text-center">
             {index + 1}
           </span>
-          <p className="text-white text-opacity-75 fw-light fs-6 mb-0">
-            {step}
-          </p>
+          <p className="text-secondary fw-light fs-6 mb-0">{step}</p>
         </li>
       ))}
     </ul>

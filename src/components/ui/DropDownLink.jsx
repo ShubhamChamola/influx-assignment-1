@@ -24,7 +24,7 @@ export default function DropDownLink({ parentLink, parentTitle, subLinks }) {
         href={parentLink}
       >
         <span>{parentTitle}</span>
-        <ArrowDown width={"11px"} fill={"white"} />
+        <ArrowDown size="11px" fill={"white"} />
       </a>
       <DropDown subLinks={subLinks} />
     </div>

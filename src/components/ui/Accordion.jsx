@@ -10,14 +10,14 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
   }, [isOpen]);
 
   return (
-    <div className={`border-bottom-light py-3 item ${isOpen && "active"}`}>
+    <div className={`border-bottom py-3 item ${isOpen && "active"}`}>
       <h4
         onClick={onClick}
-        className={`fs-6 text-white text-opacity-75 fw-normal d-flex gap-2 mb-0`}
+        className={`fs-7 text-primary fw-light d-flex gap-2 mb-0`}
         style={{ cursor: "pointer" }}
       >
         <div className="flex-shrink-0 mt-1">
-          <ArrowDown width="12px" fill=" white" />
+          <ArrowDown size="12px" fill=" white" />
         </div>
 
         {title}
@@ -30,9 +30,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
           transition: "max-height 0.4s ease",
         }}
       >
-        <p className="text-white text-opacity-50 fw-light fs-6 mb-0 mt-2 ps-3">
-          {content}
-        </p>
+        <p className="text-secondary fw-light fs-7 mb-0 mt-2 ps-3">{content}</p>
       </div>
     </div>
   );
@@ -47,7 +45,7 @@ const Accordion = ({ data }) => {
 
   return (
     <div className="accordion-wrapper">
-      <h2 className="text-white fs-4 fw-normal border-bottom-light lg-visible pb-3 mb-0 mb-lg-3">
+      <h2 className="text-primary fs-4 fw-normal border-bottom lg-visible pb-3 mb-0 mb-lg-3">
         Frequently Asked Question
       </h2>
       {data.map((item, index) => (

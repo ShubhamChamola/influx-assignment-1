@@ -6,12 +6,12 @@ export default function Footer() {
       <div className="container px-5 py-4 d-flex flex-column justify-content-center align-items-center">
         <button
           type="button"
-          class="w-100 btn text-center btn-danger btn-red px-4 py-2 d-flex flex-row gap-2 align-items-center justify-content-center btn-icon-right-animate rounded-4"
+          class="w-100 btn text-primary text-center bg-primary-subtle px-4 py-2 d-flex flex-row gap-2 align-items-center justify-content-center icon-animate rounded-4"
         >
           <span> Get started</span>
-          <ArrowRight width="20px" fill="white" />
+          <ArrowRight size="20px" fill="white" />
         </button>
-        <p className="text-white text-center text-opacity-50 fw-light fs-7 mb-0 mt-2">
+        <p className="text-center fw-light fs-7 mb-0 mt-2">
           Marcus MVP is Only available for use in our Mobile App.
         </p>
       </div>

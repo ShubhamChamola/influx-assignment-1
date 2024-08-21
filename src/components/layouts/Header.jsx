@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header className={`w-100 ${scrolled ? "scrolled" : ""}`}>
       <section className="container d-none d-sm-flex flex-column">
-        <div className="w-100 d-flex flex-row justify-content-end align-items-center gap-4 border-bottom-light py-3">
+        <div className="w-100 d-flex flex-row justify-content-end align-items-center gap-4 border-bottom py-3">
           <DropDownLink
             parentLink={"#!"}
             parentTitle={"Genre"}
@@ -57,9 +57,9 @@ export default function Header() {
           />
           <button
             type="button"
-            className="d-flex flex-row align-items-center gap-2 btn btn-icon light btn-outline-light fs-7 rounded-pill"
+            className="d-flex flex-row align-items-center gap-2 btn btn-outline-light icon fs-9 rounded-pill py-2"
           >
-            <Avatar width="15px" />
+            <Avatar size="15px" />
             <span className="lh-1">SIGN IN</span>
           </button>
         </div>

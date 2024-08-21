@@ -1,6 +1,6 @@
-export default function Avatar({ width, fill }) {
+export default function Avatar({ size, fill }) {
   return (
-    <svg width={width} height={width} fill={fill} viewBox="0 0 36 36">
+    <svg width={size} height={size} fill={fill} viewBox="0 0 36 36">
       <path
         d="M18 17a7 7 0 1 0-7-7a7 7 0 0 0 7 7m0-12a5 5 0 1 1-5 5a5 5 0 0 1 5-5"
         class="clr-i-outline clr-i-outline-path-1"
