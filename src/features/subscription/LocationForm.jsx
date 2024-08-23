@@ -40,10 +40,10 @@ export default function LocationForm() {
 
   return (
     <section
-      className="w-100 rounded-4 bg-dark location-form-wrapper overflow-hidden custom-dark-shadow 
+      className="w-100 rounded-4 bg-dark location-form-wrapper custom-dark-shadow 
     "
     >
-      <div className="p-5 ">
+      <div className="p-4 p-sm-5">
         <div className="w-fit m-auto">
           <p className="text-primary-emphasis fs-10 fw-medium mb-0">
             STEP 1<span className="font-family-sans">/</span>2
@@ -63,11 +63,11 @@ export default function LocationForm() {
         />
       </div>
 
-      <div className="d-flex justify-content-end pt-4 pb-4 px-4 bg-dark-subtle">
+      <div className="d-flex justify-content-end py-4 px-3 px-sm-4 bg-dark-subtle rounded-bottom-4">
         <button
           disabled={selectedState === null}
           onClick={onClickHandler}
-          className="btn btn-danger text-primary px-4 py-2 fs-10"
+          className="btn btn-danger text-primary px-4 py-2 fs-10 "
         >
           Save <span className="font-family-sans">&</span> Next
         </button>
