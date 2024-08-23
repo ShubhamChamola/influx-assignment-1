@@ -1,10 +1,15 @@
 import ArrowRight from "../../assets/icons/ArrowRight";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className="d-block d-sm-none w-100">
       <div className="container px-5 py-4 d-flex flex-column justify-content-center align-items-center">
         <button
+          onClick={() => {
+            navigate("/subscription");
+          }}
           type="button"
           class="w-100 btn text-primary text-center bg-primary-subtle px-4 py-2 d-flex flex-row gap-2 align-items-center justify-content-center icon-animate rounded-4"
         >

@@ -1,10 +1,18 @@
 // Font
 .font-family-sans {
-  font-family: "sans-serif";
+  font-family: "arial";
 }
 
 .letter-spacing-10 {
   letter-spacing: 10px;
+}
+// -----------------------------------
+
+// Shadow
+.custom-dark-shadow {
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
 }
 // -----------------------------------
 
@@ -15,7 +23,58 @@
 }
 // -----------------------------------
 
+// Button
+.btn.bg-animate {
+  transition: all linear 0.2s;
+
+  &.dark {
+    &:hover {
+      background-color: $white !important;
+      color: $black !important;
+    }
+  }
+}
+// -----------------------------------
+
 // Layout
+header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 3;
+
+  &.scrolled {
+    -webkit-box-shadow: 0px 12px 5px -11px rgba(255, 255, 255, 0.025);
+    -moz-box-shadow: 0px 12px 5px -11px rgba(255, 255, 255, 0.025);
+    box-shadow: 0px 12px 5px -11px rgba(255, 255, 255, 0.025);
+    background: $primary-gradient;
+  }
+}
+
+.hero {
+  height: 500px;
+  background-image: url("../images/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main {
+  padding-top: 140px;
+
+  &.home-page {
+    padding-top: 0;
+  }
+}
+
+footer {
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 3;
+  background: $secondary-gradient;
+}
+
 .main-content-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -43,35 +102,19 @@
   }
 }
 
-header {
-  top: 0;
-  right: 0;
-  position: fixed;
-  z-index: 3;
-
-  &.scrolled {
-    -webkit-box-shadow: 0px 12px 5px -11px rgba(255, 255, 255, 0.025);
-    -moz-box-shadow: 0px 12px 5px -11px rgba(255, 255, 255, 0.025);
-    box-shadow: 0px 12px 5px -11px rgba(255, 255, 255, 0.025);
-    background: $primary-gradient;
-  }
+.subscription-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero {
-  height: 500px;
-  background-image: url("../images/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.location-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 550px;
 }
 
-footer {
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: 3;
-  background: $secondary-gradient;
-}
 // -----------------------------------
 
 // Components
@@ -217,6 +260,110 @@ a {
   }
 }
 
+.dynamic-stepper-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+
+  li {
+    position: relative;
+    padding: 15px 0px 15px 35px;
+    min-height: 40px;
+
+    &:first-child {
+      &:after {
+        top: 50%;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        bottom: 50%;
+      }
+    }
+
+    &.active,
+    &.completed {
+      &::after {
+        background-image: repeating-linear-gradient(
+          0deg,
+          $white,
+          $white 7px,
+          $white 7px,
+          $white 12px,
+          $white 12px
+        );
+      }
+
+      .bullet {
+        border-color: $white;
+
+        &::after {
+          background-image: url('data:image/svg+xml,<svg  fill="%23ffffff" class="bi bi-check" viewBox="0 0 16 16" id="Check--Streamline-Bootstrap" height="16" width="16"><desc>Check Streamline Icon: https://streamlinehq.com</desc><path d="M13.4027 2.1594C14.2069 1.3936 15.5386 1.7856 15.7996 2.865C15.9126 3.3321 15.7856 3.8249 15.4608 4.1791L7.7861 13.7773C7.2297 14.3766 6.2869 14.394 5.7087 13.8158L0.6192 8.7262C-0.1933 7.9691 0.1185 6.6164 1.1804 6.2914C1.7081 6.1298 2.2818 6.2835 2.6581 6.6873L6.6859 10.7132L13.3661 2.2017Z" stroke-width="1"></path></svg>');
+        }
+      }
+    }
+
+    &.active {
+      .bullet::after {
+        background-color: $white;
+      }
+    }
+
+    &.completed {
+      .bullet::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' class='bi bi-check' viewBox='0 0 16 16' id='Check--Streamline-Bootstrap' height='10' width='10'%3E%3Cdesc%3ECheck Streamline Icon: https://streamlinehq.com%3C/desc%3E%3Cpath d='M13.4027 2.1594C14.2069 1.3936 15.5386 1.7856 15.7996 2.865C15.9126 3.3321 15.7856 3.8249 15.4608 4.1791L7.7861 13.7773C7.2297 14.3766 6.2869 14.394 5.7087 13.8158L0.6192 8.7262C-0.1933 7.9691 0.1185 6.6164 1.1804 6.2914C1.7081 6.1298 2.2818 6.2835 2.6581 6.6873L6.6859 10.7132L13.3661 2.2017Z' stroke-width='1'%3E%3C/path%3E%3C/svg%3E");
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      background-image: repeating-linear-gradient(
+        0deg,
+        $gray-darker,
+        $gray-darker 7px,
+        transparent 7px,
+        transparent 12px,
+        $gray-darker 12px
+      );
+      background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+      background-position: 0 0, 0 0, 100% 0, 0 100%;
+      background-repeat: no-repeat;
+    }
+
+    .bullet {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: 2px solid $gray-darker;
+      border-radius: 50%;
+      z-index: 1;
+      background-color: $body-bg;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
 // Accordion
 .accordion-wrapper {
   .item {
@@ -232,6 +379,86 @@ a {
       svg {
         transform: rotate(0);
       }
+    }
+  }
+}
+
+// Input
+.select-input-wrapper {
+  position: relative;
+
+  .search-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 0.65em 0.75em;
+    align-items: center;
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      font-size: 0.8rem;
+      color: $black;
+
+      &::placeholder {
+        color: $black;
+      }
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    margin: 0 10px;
+    max-height: 250px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: 10px 0px;
+    width: calc(100% - 20px);
+
+    li {
+      width: 100%;
+      padding: 5px 15px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all ease-in-out 0.2s;
+
+      &.no-option {
+        pointer-events: none;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888; /* Color of the scrollbar handle */
+      border-radius: 10px; /* Rounded corners for the scrollbar handle */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
     }
   }
 }
@@ -271,6 +498,36 @@ a {
   }
 }
 
+// Breakpoint :- md
+@media screen and (max-width: 768px) {
+  // Layout
+  .location-form-wrapper {
+    min-height: fit-content;
+  }
+
+  .subscription-step,
+  .subscription-form {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .subscription-form {
+    max-width: 500px;
+    margin-bottom: 50px;
+  }
+
+  // Components
+  .select-input-wrapper {
+    .dropdown {
+      top: unset;
+      bottom: calc(100% + 20px);
+      z-index: 2;
+      max-height: 200px;
+    }
+  }
+}
+
 // Breakpoint :- sm
 @media screen and (max-width: 576px) {
   // Layout
@@ -282,11 +539,12 @@ a {
     }
   }
 
-  .hero {
-    height: 250px;
+  main {
+    padding-top: 0;
+    padding-bottom: 180px;
   }
 
-  .footer-margin {
-    margin-bottom: 180px;
+  .hero {
+    height: 250px;
   }
 }

@@ -10,8 +10,11 @@ import Discount from "../assets/icons/Discount";
 import Fees from "../assets/icons/Fees";
 import accordionData from "../assets/data/accordionData.json";
 import Accordion from "../components/ui/Accordion";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Hero Section */}
@@ -187,6 +190,9 @@ export default function Index() {
             />
             <div className="d-none d-sm-flex flex-row align-items-center mt-4 gap-5">
               <button
+                onClick={() => {
+                  navigate("/subscription");
+                }}
                 type="button"
                 class="btn bg-primary-subtle text-primary px-4 py-2 d-flex flex-row gap-2 align-items-center icon-animate"
               >
@@ -203,7 +209,7 @@ export default function Index() {
       </section>
 
       {/* FAQs */}
-      <section className="padding-top-bottom-large bg-dark footer-margin">
+      <section className="padding-top-bottom-large bg-dark">
         <div className="container">
           <Accordion data={accordionData} />
         </div>
