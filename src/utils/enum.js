@@ -18,4 +18,5 @@ export const InputType = {
   TEXT: "text",
   EMAIL: "email",
   PASSWORD: "password",
+  DATE: "date",
 };
