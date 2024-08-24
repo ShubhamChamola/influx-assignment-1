@@ -1,14 +1,7 @@
-import { useSubscriptionContext } from "../../components/contextProviders/SubscriptionContext";
-import { SubscriptionFormSteps } from "../../utils/enum";
 import { getBillingPlanData } from "../../utils/helper";
 
 export default function BillCard() {
-  const { activeStep } = useSubscriptionContext();
   const { planName, price, total, convenienceFee } = getBillingPlanData();
-
-  if (activeStep !== SubscriptionFormSteps.CHECKOUT) {
-    return null;
-  }
 
   return (
     <div style={{ maxWidth: "300px" }}>

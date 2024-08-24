@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import DropDownLink from "../ui/DropDownLink";
 import Avatar from "../../assets/icons/Avatar";
 import Home from "../../assets/icons/Home";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {

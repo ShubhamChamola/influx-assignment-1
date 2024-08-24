@@ -11,6 +11,8 @@ export default function LoginForm() {
   const [emailValid, setEmailValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
 
+  console.log(emailValid, passwordValid);
+
   const emailRef = useRef(null);
 
   function onClickHandler() {
@@ -56,7 +58,7 @@ export default function LoginForm() {
       </div>
       <div className="d-flex flex-column gap-3 justify-content-center align-items-center mt-5">
         <button
-          disabled={!emailValid && !passwordValid}
+          disabled={!emailValid || !passwordValid}
           onClick={onClickHandler}
           className="btn btn-danger text-primary px-4 py-2 fs-10 w-100"
         >

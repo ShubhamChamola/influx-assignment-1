@@ -24,3 +24,25 @@ export function getBillingPlanData() {
 
   return null;
 }
+
+export function getLocation() {
+  let value = sessionStorage.getItem("location");
+
+  if (value) {
+    let parsedValue = JSON.parse(value);
+
+    return parsedValue;
+  }
+
+  return null;
+}
+
+export function getEmail() {
+  let value = sessionStorage.getItem("email");
+
+  if (value) {
+    return value;
+  }
+
+  return null;
+}

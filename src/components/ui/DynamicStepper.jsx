@@ -17,7 +17,9 @@ export default function DynamicStepper() {
             <p className="fs-12 mb-0 fw-medium">
               {stepData.label.toUpperCase()}
             </p>
-            <p className="fs-7 mb-0 text-secondary">{stepData.text}</p>
+            <p className="fs-8 mb-0 font-family-sans step-text">
+              {stepData.text}
+            </p>
           </div>
         </li>
       ))}

@@ -1,7 +1,3 @@
-export const Routes = {
-  Home: "/",
-};
-
 export const SubscriptionReducerActions = {
   CHANGE_ACTIVE_STEP: "change_active_step",
   PREV_STEP: "prev_step",

@@ -16,6 +16,16 @@
 }
 // -----------------------------------
 
+// Backgrounds
+.custom-dark-bg {
+  background-color: $darker-black;
+}
+
+.custom-darkest-bg {
+  background-color: $darkest-black;
+}
+// -----------------------------------
+
 // Border
 .dashed-border-bottom-dark-subtle {
   border-bottom: 2px dashed $gray-darker;
@@ -26,6 +36,11 @@
 .padding-top-bottom-large {
   padding-top: 7rem;
   padding-bottom: 7rem;
+}
+
+.padding-top-bottom-medium {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 // -----------------------------------
 
@@ -67,10 +82,6 @@ header {
 
 main {
   padding-top: 140px;
-
-  &.home-page {
-    padding-top: 0;
-  }
 }
 
 footer {
@@ -322,6 +333,9 @@ a {
     }
 
     &.completed {
+      .step-text {
+        color: $gray-light;
+      }
       .bullet::after {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' class='bi bi-check' viewBox='0 0 16 16' id='Check--Streamline-Bootstrap' height='10' width='10'%3E%3Cdesc%3ECheck Streamline Icon: https://streamlinehq.com%3C/desc%3E%3Cpath d='M13.4027 2.1594C14.2069 1.3936 15.5386 1.7856 15.7996 2.865C15.9126 3.3321 15.7856 3.8249 15.4608 4.1791L7.7861 13.7773C7.2297 14.3766 6.2869 14.394 5.7087 13.8158L0.6192 8.7262C-0.1933 7.9691 0.1185 6.6164 1.1804 6.2914C1.7081 6.1298 2.2818 6.2835 2.6581 6.6873L6.6859 10.7132L13.3661 2.2017Z' stroke-width='1'%3E%3C/path%3E%3C/svg%3E");
       }
@@ -398,7 +412,7 @@ a {
   height: 100%;
   border: 2px solid rgba(166, 146, 126, 0.25);
   border-radius: 5px;
-  padding: 16px 14px;
+  padding: 20px 14px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -435,6 +449,57 @@ a {
     background-color: transparent;
     padding: 5px;
   }
+
+  .label {
+    position: absolute;
+    background-color: rgb(181, 161, 141);
+    color: $darker-black;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 50px;
+    top: -12px;
+    left: 15px;
+  }
+
+  &.extra-spacing {
+    padding-top: 25px;
+  }
+}
+
+.booking-summary-wrapper {
+  overflow: hidden;
+  max-width: 400px;
+
+  .banner {
+    background-image: url("../images/confirmation-banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 250px;
+    position: relative;
+
+    .punch {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: calc(100% - 15px);
+      left: -15px;
+      z-index: 2;
+      background-color: $body-bg;
+      border-radius: 50%;
+
+      &:nth-child(2) {
+        left: unset;
+        right: -15px;
+      }
+    }
+  }
+}
+
+.order-summary-wrapper {
+  max-width: 300px;
 }
 
 // Input
@@ -607,6 +672,11 @@ a {
   .padding-top-bottom-large {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .padding-top-bottom-medium {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   // Border

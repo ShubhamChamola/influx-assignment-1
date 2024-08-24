@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Checkbox from "../../components/input/Checkbox";
 import Card from "../../assets/icons/Card";
 import TextInput from "../../components/input/TextInput";
 import { InputType } from "../../utils/enum";
 import { getBillingPlanData } from "../../utils/helper";
 import Repeat from "../../assets/icons/Repeat";
+import { useNavigate } from "react-router-dom";
 
 export default function CheckoutForm() {
   const [termAccpeted, setTermAccepted] = useState(false);
+  const navigate = useNavigate();
 
   const { total } = getBillingPlanData();
+
+  function onClickHandler() {
+    sessionStorage.setItem("viewConfirmation", JSON.stringify(true));
+    navigate("/confirmation");
+  }
 
   return (
     <section className="d-flex flex-column gap-3">
@@ -82,7 +89,7 @@ export default function CheckoutForm() {
 
           <button
             disabled={!termAccpeted}
-            // onClick={onClickHandler}
+            onClick={onClickHandler}
             className="btn btn-danger text-primary px-4 py-2 fs-10 w-100 mt-4"
           >
             Complete payment

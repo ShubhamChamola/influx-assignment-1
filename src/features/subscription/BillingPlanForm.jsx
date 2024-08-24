@@ -9,9 +9,10 @@ function Card({ data, billingCycle, onClickHandler }) {
       key={data.name}
       className={`billing-card ${
         data.name === billingCycle.name ? "active" : ""
-      } `}
+      } ${data.label?.length > 0 ? "extra-spacing" : ""}`}
       onClick={() => onClickHandler(data)}
     >
+      {data.label?.length > 0 && <span className="label">{data.label}</span>}
       <span className="checkbox"></span>
       <div className="text">
         <h5 className="text-primary fs-7 fw-normal mb-0">{data.name}</h5>

@@ -16,7 +16,7 @@ const TextInput = forwardRef(
   ) => {
     const [inputValue, setInputValue] = useState("");
     const [debouncedValue, setDebouncedValue] = useState("");
-    const [dirty, setDirty] = useState(false);
+    const [touched, setTouched] = useState(false);
 
     useEffect(() => {
       const handler = setTimeout(() => {
@@ -29,27 +29,21 @@ const TextInput = forwardRef(
     }, [inputValue]);
 
     useEffect(() => {
-      if (debouncedValue || dirty) {
+      if (debouncedValue && setIsValid) {
         const regex = new RegExp(validationPattern);
-        setIsValid && setIsValid(regex.test(debouncedValue));
+        setIsValid(regex.test(debouncedValue));
       }
-    }, [debouncedValue]);
+    }, [debouncedValue, setIsValid, validationPattern]);
 
     function onChangeHandler(event) {
       setInputValue(event.target.value);
-      setDirty(true);
     }
 
     function onBlurHandler(event) {
-      if (!dirty) {
-        setDirty(true);
-      }
+      if (!touched) setTouched(true);
 
-      let value = event.target.value;
-
-      if (value.length === 0) {
-        setInputValue(event.target.value);
-      }
+      const regex = new RegExp(validationPattern);
+      setIsValid(regex.test(event.target.value));
     }
 
     return (
@@ -65,7 +59,7 @@ const TextInput = forwardRef(
           onBlur={onBlurHandler}
           ref={ref}
         />
-        {dirty && !isValid && errorText && (
+        {touched && !isValid && errorText && (
           <p className="fs-10 text-danger mt-1 mb-0">{errorText}</p>
         )}
       </div>
