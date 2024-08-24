@@ -108,7 +108,7 @@ footer {
   padding: 0 20px;
 }
 
-.location-form-wrapper {
+.min-height-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -383,6 +383,51 @@ a {
   }
 }
 
+.billing-card {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(166, 146, 126, 0.25);
+  border-radius: 5px;
+  padding: 16px 14px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background-color: transparent;
+  opacity: 0.9;
+  transition: all linear 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $green;
+  }
+
+  &.active {
+    background-color: rgba(166, 146, 126, 0.25);
+    border-color: $green;
+    background-color: rgba(166, 146, 126, 0.2);
+
+    .checkbox {
+      background-color: $white;
+      border-color: $white;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' class='bi bi-check' viewBox='0 0 16 16' id='Check--Streamline-Bootstrap' height='9' width='9'%3E%3Cdesc%3ECheck Streamline Icon: https://streamlinehq.com%3C/desc%3E%3Cpath d='M13.4027 2.1594C14.2069 1.3936 15.5386 1.7856 15.7996 2.865C15.9126 3.3321 15.7856 3.8249 15.4608 4.1791L7.7861 13.7773C7.2297 14.3766 6.2869 14.394 5.7087 13.8158L0.6192 8.7262C-0.1933 7.9691 0.1185 6.6164 1.1804 6.2914C1.7081 6.1298 2.2818 6.2835 2.6581 6.6873L6.6859 10.7132L13.3661 2.2017Z' stroke-width='1'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 75%;
+    }
+  }
+
+  .checkbox {
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(166, 146, 126, 0.25);
+    background-color: transparent;
+    padding: 5px;
+  }
+}
+
 // Input
 .select-input-wrapper {
   position: relative;
@@ -501,7 +546,7 @@ a {
 // Breakpoint :- md
 @media screen and (max-width: 768px) {
   // Layout
-  .location-form-wrapper {
+  .min-height-form {
     min-height: fit-content;
   }
 

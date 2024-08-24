@@ -4,6 +4,7 @@ export const Routes = {
 
 export const SubscriptionReducerActions = {
   CHANGE_ACTIVE_STEP: "change_active_step",
+  PREV_STEP: "prev_step",
 };
 
 export const SubscriptionFormSteps = {

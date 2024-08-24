@@ -4,6 +4,7 @@ import {
   useSubscriptionContext,
 } from "../components/contextProviders/SubscriptionContext";
 import LocationForm from "../features/subscription/LocationForm";
+import BillingPlanForm from "../features/subscription/BillingPlanForm";
 
 function FormWrapper() {
   const { activeStep } = useSubscriptionContext();
@@ -11,6 +12,7 @@ function FormWrapper() {
   return (
     <div className="subscription-form mt-5 mt-md-0">
       {activeStep === 1 && <LocationForm />}
+      {activeStep === 2 && <BillingPlanForm />}
     </div>
   );
 }

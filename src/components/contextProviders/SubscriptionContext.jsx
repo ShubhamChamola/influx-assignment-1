@@ -50,6 +50,14 @@ function reducer(state, action) {
         stepsConfig: updatedConfig,
       };
     }
+    case SubscriptionReducerActions.PREV_STEP: {
+      let newStep = action.stepID;
+
+      return {
+        ...state,
+        activeStep: newStep,
+      };
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }
@@ -68,6 +76,12 @@ export const SubscriptionContextProvider = ({ children }) => {
         stepID,
         stepText,
         newStep,
+      });
+    },
+    previousStep: (stepID) => {
+      dispatch({
+        type: SubscriptionReducerActions.PREV_STEP,
+        stepID,
       });
     },
   };
