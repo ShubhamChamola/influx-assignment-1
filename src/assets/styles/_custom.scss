@@ -174,6 +174,10 @@ a {
   color: $light;
   text-decoration: none;
 
+  &.underline {
+    text-decoration: underline;
+  }
+
   svg {
     transition: all ease-in-out 0.2s;
   }
@@ -403,7 +407,6 @@ a {
   }
 
   &.active {
-    background-color: rgba(166, 146, 126, 0.25);
     border-color: $green;
     background-color: rgba(166, 146, 126, 0.2);
 
@@ -507,6 +510,31 @@ a {
     }
   }
 }
+
+.input-wrapper {
+  label {
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    border: 2px solid rgba(166, 146, 126, 0.25);
+    border-radius: 5px;
+    padding: 10px 14px;
+    color: $white;
+    font-size: 0.8rem;
+    background-color: rgba(166, 146, 126, 0.075) !important;
+    outline: 0;
+    transition: all linear 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+      border-color: $green;
+    }
+  }
+}
+
 // -----------------------------------
 
 // Breakpoint :- lg

@@ -5,14 +5,19 @@ import {
 } from "../components/contextProviders/SubscriptionContext";
 import LocationForm from "../features/subscription/LocationForm";
 import BillingPlanForm from "../features/subscription/BillingPlanForm";
+import { SubscriptionFormSteps } from "../utils/enum";
+import LoginForm from "../features/subscription/LoginForm";
+import CheckoutForm from "../features/subscription/CheckoutForm";
 
 function FormWrapper() {
   const { activeStep } = useSubscriptionContext();
 
   return (
     <div className="subscription-form mt-5 mt-md-0">
-      {activeStep === 1 && <LocationForm />}
-      {activeStep === 2 && <BillingPlanForm />}
+      {activeStep === SubscriptionFormSteps.LOCATION && <LocationForm />}
+      {activeStep === SubscriptionFormSteps.BILLING && <BillingPlanForm />}
+      {activeStep === SubscriptionFormSteps.LOGIN && <LoginForm />}
+      {activeStep === SubscriptionFormSteps.CHECKOUT && <CheckoutForm />}
     </div>
   );
 }

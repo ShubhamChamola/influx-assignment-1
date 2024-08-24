@@ -13,3 +13,9 @@ export const SubscriptionFormSteps = {
   LOGIN: 3,
   CHECKOUT: 4,
 };
+
+export const InputType = {
+  TEXT: "text",
+  EMAIL: "email",
+  PASSWORD: "password",
+};
