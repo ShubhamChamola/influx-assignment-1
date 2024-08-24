@@ -38,9 +38,10 @@ function reducer(state, action) {
       let targetedStepID = action.stepID;
       let updatedStepText = action.stepText;
 
-      let targetedStep = { ...updatedConfig[targetedStepID] };
+      let label = initialState.stepsConfig[targetedStepID].text;
+
       updatedConfig[targetedStepID] = {
-        label: targetedStep.text,
+        label: label,
         text: updatedStepText,
       };
 

@@ -5,7 +5,7 @@ export default function BillCard() {
 
   return (
     <div style={{ maxWidth: "300px" }}>
-      <div className="d-flex justify-content-between align-items-center pb-3 dashed-border-bottom-dark-subtle px-2">
+      <div className="d-flex justify-content-between align-items-end pb-3 dashed-border-bottom-dark-subtle px-2">
         <div>
           <p className="fw-medium fs-11 mb-1">BILLING CYCLE</p>
           <p className="fs-8 text-secondary mb-0">{planName}</p>
@@ -17,7 +17,7 @@ export default function BillCard() {
         </p>
       </div>
 
-      <div className="d-flex justify-content-between align-items-center border-bottom px-2 py-3">
+      <div className="d-flex justify-content-between align-items-start border-bottom px-2 py-3">
         <div>
           <p className="fs-8 text-secondary mb-0 lh-1">Convenience fee</p>
           <span className="fs-12">Tax applied wherever applicable</span>
